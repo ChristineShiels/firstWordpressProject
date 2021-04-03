@@ -24,7 +24,7 @@
           <div class="post-card">
           <div class="post-thumb">
             <a href="<?php the_permalink(); ?>" title="Permalink to: <?php esc_attr(the_title_attribute()); ?>" rel="bookmark">
-              <?php the_post_thumbnail( 'medium' )?>
+              <?php the_post_thumbnail( 'thumbnail' )?>
             </a>
           </div>
             <div class="post-content">
@@ -61,5 +61,12 @@
   <?php get_sidebar(); ?>
 
 </div>
+<?php
+
+$image = get_field('rocket_ships');
+
+if( $image ) { ?>
+	<img class="rocket-ships" src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+<?php } ?>
 
 <?php get_footer(); ?>

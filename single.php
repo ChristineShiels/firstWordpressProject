@@ -37,5 +37,12 @@
   <?php get_sidebar(); ?>
 
 </div>
+<?php
+
+$image = get_field('rocket_ships');
+
+if( $image ) { ?>
+	<img class="rocket-ships" src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+<?php } ?>
 
 <?php get_footer(); ?>
