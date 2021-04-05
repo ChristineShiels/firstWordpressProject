@@ -45,10 +45,9 @@
               </article><!-- #post-## -->
             </div>
           </div>
-          
+
         <?php endwhile; // End the loop. Whew. ?>
         </div>
-        
 
         <?php // Display navigation to next/previous pages when applicable ?>
         <?php if (  $wp_query->max_num_pages > 1 ) : ?>
@@ -56,7 +55,12 @@
         <p class="alignright"><?php previous_posts_link('Newer Entries &raquo;'); ?></p>
         <?php endif; ?>
       </div>
+      <form class="cat-drop" action="<?php echo esc_url( home_url( '/' ) ); ?>" method="get">
+        <?php wp_dropdown_categories(); ?>
+        <input type="submit" name="submit" value="Go" />
+    </form>
   </div> <!--/.content -->
+
 
   <?php get_sidebar(); ?>
 
